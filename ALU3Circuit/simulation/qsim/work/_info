@@ -1,0 +1,85 @@
+m255
+K3
+13
+cModel Technology
+Z0 dF:\Quartus Projects\Lab 6\ALU3Circuit\simulation\qsim
+vCircuit3
+Z1 IjWk@;JYNgfZfog7^jgg5W0
+Z2 VM[SzP[gHQ6[aJo55neiS<1
+Z3 dF:\Quartus Projects\Lab 6\ALU3Circuit\simulation\qsim
+Z4 w1732786203
+Z5 8Circuit3.vo
+Z6 FCircuit3.vo
+L0 31
+Z7 OV;L;10.1d;51
+r1
+31
+Z8 !s90 -work|work|Circuit3.vo|
+Z9 o-work work -O0
+Z10 n@circuit3
+!i10b 1
+Z11 !s100 Cb0UPFXOfY0;8lN?CQSYX0
+!s85 0
+Z12 !s108 1732786204.170000
+Z13 !s107 Circuit3.vo|
+!s101 -O0
+vCircuit3_vlg_check_tst
+!i10b 1
+Z14 !s100 U4iVEU41VWWbnAV8HHVzB2
+Z15 ILWnoB9Uo_K[eN;lJ]CSlV3
+Z16 VD8UTRe9im`L]0JnQR@OYS0
+R3
+R4
+Z17 8Circuit3.vt
+Z18 FCircuit3.vt
+L0 71
+R7
+r1
+!s85 0
+31
+Z19 !s108 1732786204.220000
+Z20 !s107 Circuit3.vt|
+Z21 !s90 -work|work|Circuit3.vt|
+!s101 -O0
+R9
+Z22 n@circuit3_vlg_check_tst
+vCircuit3_vlg_sample_tst
+!i10b 1
+Z23 !s100 EmR>EI:n?>O7618GYY0cH2
+Z24 ICoP?3l8SR?KiVb`aSd?Ra1
+Z25 VH@Q_>YaeUje_]^L6z0[7T1
+R3
+R4
+R17
+R18
+L0 29
+R7
+r1
+!s85 0
+31
+R19
+R20
+R21
+!s101 -O0
+R9
+Z26 n@circuit3_vlg_sample_tst
+vCircuit3_vlg_vec_tst
+!i10b 1
+!s100 RTn`0gCTPbzN89LYzLNzD0
+Ick]T1moPLGTXOU;Y9=Do[2
+Z27 V0WZS<zBM>KJS3<XbDNk_X0
+R3
+R4
+R17
+R18
+Z28 L0 407
+R7
+r1
+!s85 0
+31
+R19
+R20
+R21
+!s101 -O0
+R9
+Z29 n@circuit3_vlg_vec_tst

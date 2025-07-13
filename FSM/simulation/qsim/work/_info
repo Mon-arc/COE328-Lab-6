@@ -1,0 +1,81 @@
+m255
+K3
+13
+cModel Technology
+Z0 dF:\Quartus Projects\Lab 5\Lab 5\simulation\qsim
+vlab5
+Z1 !s100 <DE=16;QelA1W<<4MY0_k2
+Z2 IZ=4`djK_6C0PJfeHF>kP`1
+Z3 V`OK3HNb`[coA>bM]B<RYO1
+Z4 dF:\Quartus Projects\Lab 5\Lab 5\simulation\qsim
+Z5 w1732354670
+Z6 8lab5.vo
+Z7 Flab5.vo
+L0 31
+Z8 OV;L;10.1d;51
+r1
+31
+Z9 !s90 -work|work|lab5.vo|
+Z10 o-work work -O0
+!i10b 1
+!s85 0
+Z11 !s108 1732354670.830000
+Z12 !s107 lab5.vo|
+!s101 -O0
+vlab5_vlg_check_tst
+!i10b 1
+!s100 nHYKhIbR0?4cOa`PASbRX0
+IDFEmzDSkFbzTUcZE?SaZg0
+Z13 V<IIRLMFfkE=W1?zU??OdD1
+R4
+R5
+Z14 8lab5.vt
+Z15 Flab5.vt
+L0 61
+R8
+r1
+!s85 0
+31
+Z16 !s108 1732354670.872000
+Z17 !s107 lab5.vt|
+Z18 !s90 -work|work|lab5.vt|
+!s101 -O0
+R10
+vlab5_vlg_sample_tst
+!i10b 1
+Z19 !s100 5Tj]A1?8cjCfeo<^XHzO`2
+Z20 I2akIkQgkbal];`o1eSk7e1
+Z21 VVj9>jY;hYAQ5;HgP5bO=^1
+R4
+R5
+R14
+R15
+L0 29
+R8
+r1
+!s85 0
+31
+R16
+R17
+R18
+!s101 -O0
+R10
+vlab5_vlg_vec_tst
+!i10b 1
+!s100 o:1UN3o<9fnlPANDRH6Fd0
+IQ_lS57[RNj=J0@:0ZZK=42
+Z22 Vl]k[MHb8HoPJSaBzTVYWg2
+R4
+R5
+R14
+R15
+Z23 L0 271
+R8
+r1
+!s85 0
+31
+R16
+R17
+R18
+!s101 -O0
+R10

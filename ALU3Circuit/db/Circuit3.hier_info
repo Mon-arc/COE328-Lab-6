@@ -1,0 +1,383 @@
+|Circuit3
+display[6] <= sseg3:inst6.ResultLED[6]
+display[5] <= sseg3:inst6.ResultLED[5]
+display[4] <= sseg3:inst6.ResultLED[4]
+display[3] <= sseg3:inst6.ResultLED[3]
+display[2] <= sseg3:inst6.ResultLED[2]
+display[1] <= sseg3:inst6.ResultLED[1]
+display[0] <= sseg3:inst6.ResultLED[0]
+Clock => ALU3:inst1.clock
+Clock => register1:inst4.clock
+Clock => register1:inst5.clock
+Clock => FSM:inst2.clk
+ResetFSM => ALU3:inst1.reset
+ResetFSM => FSM:inst2.reset
+RegResets => register1:inst4.reset
+RegResets => register1:inst5.reset
+A[0] => register1:inst4.A[0]
+A[1] => register1:inst4.A[1]
+A[2] => register1:inst4.A[2]
+A[3] => register1:inst4.A[3]
+A[4] => register1:inst4.A[4]
+A[5] => register1:inst4.A[5]
+A[6] => register1:inst4.A[6]
+A[7] => register1:inst4.A[7]
+B[0] => register1:inst5.A[0]
+B[1] => register1:inst5.A[1]
+B[2] => register1:inst5.A[2]
+B[3] => register1:inst5.A[3]
+B[4] => register1:inst5.A[4]
+B[5] => register1:inst5.A[5]
+B[6] => register1:inst5.A[6]
+B[7] => register1:inst5.A[7]
+Enable_Decoder => 4to16Decod:inst.En
+data_inFSM => FSM:inst2.data_in
+StudentID_Display[6] <= sseg:inst3.ResultLED[6]
+StudentID_Display[5] <= sseg:inst3.ResultLED[5]
+StudentID_Display[4] <= sseg:inst3.ResultLED[4]
+StudentID_Display[3] <= sseg:inst3.ResultLED[3]
+StudentID_Display[2] <= sseg:inst3.ResultLED[2]
+StudentID_Display[1] <= sseg:inst3.ResultLED[1]
+StudentID_Display[0] <= sseg:inst3.ResultLED[0]
+
+
+|Circuit3|sseg3:inst6
+bcd[0] => ~NO_FANOUT~
+bcd[1] => ~NO_FANOUT~
+bcd[2] => ~NO_FANOUT~
+bcd[3] => ResultLED[4].DATAIN
+bcd[3] => ResultLED[1].DATAIN
+bcd[3] => ResultLED[3].DATAIN
+bcd[3] => ResultLED[5].DATAIN
+ResultLED[6] <= <GND>
+ResultLED[5] <= bcd[3].DB_MAX_OUTPUT_PORT_TYPE
+ResultLED[4] <= bcd[3].DB_MAX_OUTPUT_PORT_TYPE
+ResultLED[3] <= bcd[3].DB_MAX_OUTPUT_PORT_TYPE
+ResultLED[2] <= <GND>
+ResultLED[1] <= bcd[3].DB_MAX_OUTPUT_PORT_TYPE
+ResultLED[0] <= <VCC>
+
+
+|Circuit3|ALU3:inst1
+clock => ~NO_FANOUT~
+reset => Result.OUTPUTSELECT
+reset => Result.OUTPUTSELECT
+reset => Result.OUTPUTSELECT
+reset => Result.OUTPUTSELECT
+A[0] => ~NO_FANOUT~
+A[1] => ~NO_FANOUT~
+A[2] => ~NO_FANOUT~
+A[3] => ~NO_FANOUT~
+A[4] => ~NO_FANOUT~
+A[5] => ~NO_FANOUT~
+A[6] => ~NO_FANOUT~
+A[7] => ~NO_FANOUT~
+B[0] => LessThan1.IN8
+B[1] => LessThan1.IN7
+B[2] => LessThan1.IN6
+B[3] => LessThan1.IN5
+B[4] => LessThan0.IN8
+B[5] => LessThan0.IN7
+B[6] => LessThan0.IN6
+B[7] => LessThan0.IN5
+opcode[0] => ~NO_FANOUT~
+opcode[1] => ~NO_FANOUT~
+opcode[2] => ~NO_FANOUT~
+opcode[3] => ~NO_FANOUT~
+opcode[4] => ~NO_FANOUT~
+opcode[5] => ~NO_FANOUT~
+opcode[6] => ~NO_FANOUT~
+opcode[7] => ~NO_FANOUT~
+opcode[8] => ~NO_FANOUT~
+opcode[9] => ~NO_FANOUT~
+opcode[10] => ~NO_FANOUT~
+opcode[11] => ~NO_FANOUT~
+opcode[12] => ~NO_FANOUT~
+opcode[13] => ~NO_FANOUT~
+opcode[14] => ~NO_FANOUT~
+opcode[15] => ~NO_FANOUT~
+student_id[0] => LessThan0.IN4
+student_id[0] => LessThan1.IN4
+student_id[1] => LessThan0.IN3
+student_id[1] => LessThan1.IN3
+student_id[2] => LessThan0.IN2
+student_id[2] => LessThan1.IN2
+student_id[3] => LessThan0.IN1
+student_id[3] => LessThan1.IN1
+neg <= comb.DB_MAX_OUTPUT_PORT_TYPE
+Result[0] <= Result.DB_MAX_OUTPUT_PORT_TYPE
+Result[1] <= Result.DB_MAX_OUTPUT_PORT_TYPE
+Result[2] <= Result.DB_MAX_OUTPUT_PORT_TYPE
+Result[3] <= Result.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Circuit3|register1:inst4
+A[0] => Q[0]~reg0.DATAIN
+A[1] => Q[1]~reg0.DATAIN
+A[2] => Q[2]~reg0.DATAIN
+A[3] => Q[3]~reg0.DATAIN
+A[4] => Q[4]~reg0.DATAIN
+A[5] => Q[5]~reg0.DATAIN
+A[6] => Q[6]~reg0.DATAIN
+A[7] => Q[7]~reg0.DATAIN
+reset => Q[0]~reg0.ACLR
+reset => Q[1]~reg0.ACLR
+reset => Q[2]~reg0.ACLR
+reset => Q[3]~reg0.ACLR
+reset => Q[4]~reg0.ACLR
+reset => Q[5]~reg0.ACLR
+reset => Q[6]~reg0.ACLR
+reset => Q[7]~reg0.ACLR
+clock => Q[0]~reg0.CLK
+clock => Q[1]~reg0.CLK
+clock => Q[2]~reg0.CLK
+clock => Q[3]~reg0.CLK
+clock => Q[4]~reg0.CLK
+clock => Q[5]~reg0.CLK
+clock => Q[6]~reg0.CLK
+clock => Q[7]~reg0.CLK
+Q[0] <= Q[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Q[1] <= Q[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Q[2] <= Q[2]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Q[3] <= Q[3]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Q[4] <= Q[4]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Q[5] <= Q[5]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Q[6] <= Q[6]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Q[7] <= Q[7]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Circuit3|register1:inst5
+A[0] => Q[0]~reg0.DATAIN
+A[1] => Q[1]~reg0.DATAIN
+A[2] => Q[2]~reg0.DATAIN
+A[3] => Q[3]~reg0.DATAIN
+A[4] => Q[4]~reg0.DATAIN
+A[5] => Q[5]~reg0.DATAIN
+A[6] => Q[6]~reg0.DATAIN
+A[7] => Q[7]~reg0.DATAIN
+reset => Q[0]~reg0.ACLR
+reset => Q[1]~reg0.ACLR
+reset => Q[2]~reg0.ACLR
+reset => Q[3]~reg0.ACLR
+reset => Q[4]~reg0.ACLR
+reset => Q[5]~reg0.ACLR
+reset => Q[6]~reg0.ACLR
+reset => Q[7]~reg0.ACLR
+clock => Q[0]~reg0.CLK
+clock => Q[1]~reg0.CLK
+clock => Q[2]~reg0.CLK
+clock => Q[3]~reg0.CLK
+clock => Q[4]~reg0.CLK
+clock => Q[5]~reg0.CLK
+clock => Q[6]~reg0.CLK
+clock => Q[7]~reg0.CLK
+Q[0] <= Q[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Q[1] <= Q[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Q[2] <= Q[2]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Q[3] <= Q[3]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Q[4] <= Q[4]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Q[5] <= Q[5]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Q[6] <= Q[6]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Q[7] <= Q[7]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Circuit3|4to16Decod:inst
+y[0] <= decod:inst1.y0
+y[1] <= decod:inst1.y1
+y[2] <= decod:inst1.y2
+y[3] <= decod:inst1.y3
+y[4] <= decod:inst2.y0
+y[5] <= decod:inst2.y1
+y[6] <= decod:inst2.y2
+y[7] <= decod:inst2.y3
+y[8] <= decod:inst3.y0
+y[9] <= decod:inst3.y1
+y[10] <= decod:inst3.y2
+y[11] <= decod:inst3.y3
+y[12] <= decod:inst4.y0
+y[13] <= decod:inst4.y1
+y[14] <= decod:inst4.y2
+y[15] <= decod:inst4.y3
+w[0] => decod:inst1.w0
+w[0] => decod:inst2.w0
+w[0] => decod:inst3.w0
+w[0] => decod:inst4.w0
+w[1] => decod:inst1.w1
+w[1] => decod:inst2.w1
+w[1] => decod:inst3.w1
+w[1] => decod:inst4.w1
+w[2] => decod:inst.w0
+w[3] => decod:inst.w1
+En => decod:inst.En
+
+
+|Circuit3|4to16Decod:inst|decod:inst1
+w1 => Mux0.IN9
+w1 => Mux1.IN9
+w1 => Mux2.IN9
+w1 => Mux3.IN9
+w0 => Mux0.IN10
+w0 => Mux1.IN10
+w0 => Mux2.IN10
+w0 => Mux3.IN10
+En => Mux0.IN8
+En => Mux1.IN8
+En => Mux2.IN8
+En => Mux3.IN8
+y0 <= Mux0.DB_MAX_OUTPUT_PORT_TYPE
+y1 <= Mux1.DB_MAX_OUTPUT_PORT_TYPE
+y2 <= Mux2.DB_MAX_OUTPUT_PORT_TYPE
+y3 <= Mux3.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Circuit3|4to16Decod:inst|decod:inst
+w1 => Mux0.IN9
+w1 => Mux1.IN9
+w1 => Mux2.IN9
+w1 => Mux3.IN9
+w0 => Mux0.IN10
+w0 => Mux1.IN10
+w0 => Mux2.IN10
+w0 => Mux3.IN10
+En => Mux0.IN8
+En => Mux1.IN8
+En => Mux2.IN8
+En => Mux3.IN8
+y0 <= Mux0.DB_MAX_OUTPUT_PORT_TYPE
+y1 <= Mux1.DB_MAX_OUTPUT_PORT_TYPE
+y2 <= Mux2.DB_MAX_OUTPUT_PORT_TYPE
+y3 <= Mux3.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Circuit3|4to16Decod:inst|decod:inst2
+w1 => Mux0.IN9
+w1 => Mux1.IN9
+w1 => Mux2.IN9
+w1 => Mux3.IN9
+w0 => Mux0.IN10
+w0 => Mux1.IN10
+w0 => Mux2.IN10
+w0 => Mux3.IN10
+En => Mux0.IN8
+En => Mux1.IN8
+En => Mux2.IN8
+En => Mux3.IN8
+y0 <= Mux0.DB_MAX_OUTPUT_PORT_TYPE
+y1 <= Mux1.DB_MAX_OUTPUT_PORT_TYPE
+y2 <= Mux2.DB_MAX_OUTPUT_PORT_TYPE
+y3 <= Mux3.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Circuit3|4to16Decod:inst|decod:inst3
+w1 => Mux0.IN9
+w1 => Mux1.IN9
+w1 => Mux2.IN9
+w1 => Mux3.IN9
+w0 => Mux0.IN10
+w0 => Mux1.IN10
+w0 => Mux2.IN10
+w0 => Mux3.IN10
+En => Mux0.IN8
+En => Mux1.IN8
+En => Mux2.IN8
+En => Mux3.IN8
+y0 <= Mux0.DB_MAX_OUTPUT_PORT_TYPE
+y1 <= Mux1.DB_MAX_OUTPUT_PORT_TYPE
+y2 <= Mux2.DB_MAX_OUTPUT_PORT_TYPE
+y3 <= Mux3.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Circuit3|4to16Decod:inst|decod:inst4
+w1 => Mux0.IN9
+w1 => Mux1.IN9
+w1 => Mux2.IN9
+w1 => Mux3.IN9
+w0 => Mux0.IN10
+w0 => Mux1.IN10
+w0 => Mux2.IN10
+w0 => Mux3.IN10
+En => Mux0.IN8
+En => Mux1.IN8
+En => Mux2.IN8
+En => Mux3.IN8
+y0 <= Mux0.DB_MAX_OUTPUT_PORT_TYPE
+y1 <= Mux1.DB_MAX_OUTPUT_PORT_TYPE
+y2 <= Mux2.DB_MAX_OUTPUT_PORT_TYPE
+y3 <= Mux3.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Circuit3|FSM:inst2
+data_in => yfsm.OUTPUTSELECT
+data_in => yfsm.OUTPUTSELECT
+data_in => yfsm.OUTPUTSELECT
+data_in => yfsm.OUTPUTSELECT
+data_in => yfsm.OUTPUTSELECT
+data_in => yfsm.OUTPUTSELECT
+data_in => yfsm.OUTPUTSELECT
+data_in => yfsm.OUTPUTSELECT
+data_in => yfsm.OUTPUTSELECT
+data_in => yfsm.OUTPUTSELECT
+data_in => yfsm.OUTPUTSELECT
+data_in => yfsm.OUTPUTSELECT
+data_in => yfsm.OUTPUTSELECT
+data_in => yfsm.OUTPUTSELECT
+data_in => yfsm.OUTPUTSELECT
+data_in => yfsm.OUTPUTSELECT
+clk => yfsm~9.DATAIN
+reset => yfsm~11.DATAIN
+student_id[0] <= student_id.DB_MAX_OUTPUT_PORT_TYPE
+student_id[1] <= WideOr3.DB_MAX_OUTPUT_PORT_TYPE
+student_id[2] <= student_id.DB_MAX_OUTPUT_PORT_TYPE
+student_id[3] <= <GND>
+current_state[0] <= WideOr2.DB_MAX_OUTPUT_PORT_TYPE
+current_state[1] <= WideOr1.DB_MAX_OUTPUT_PORT_TYPE
+current_state[2] <= WideOr0.DB_MAX_OUTPUT_PORT_TYPE
+current_state[3] <= <GND>
+
+
+|Circuit3|sseg:inst3
+neg => NegativeLED[6].DATAIN
+bcd[0] => Mux0.IN19
+bcd[0] => Mux1.IN19
+bcd[0] => Mux2.IN19
+bcd[0] => Mux3.IN19
+bcd[0] => Mux4.IN19
+bcd[0] => Mux5.IN19
+bcd[0] => Mux6.IN19
+bcd[1] => Mux0.IN18
+bcd[1] => Mux1.IN18
+bcd[1] => Mux2.IN18
+bcd[1] => Mux3.IN18
+bcd[1] => Mux4.IN18
+bcd[1] => Mux5.IN18
+bcd[1] => Mux6.IN18
+bcd[2] => Mux0.IN17
+bcd[2] => Mux1.IN17
+bcd[2] => Mux2.IN17
+bcd[2] => Mux3.IN17
+bcd[2] => Mux4.IN17
+bcd[2] => Mux5.IN17
+bcd[2] => Mux6.IN17
+bcd[3] => Mux0.IN16
+bcd[3] => Mux1.IN16
+bcd[3] => Mux2.IN16
+bcd[3] => Mux3.IN16
+bcd[3] => Mux4.IN16
+bcd[3] => Mux5.IN16
+bcd[3] => Mux6.IN16
+ResultLED[6] <= Mux6.DB_MAX_OUTPUT_PORT_TYPE
+ResultLED[5] <= Mux5.DB_MAX_OUTPUT_PORT_TYPE
+ResultLED[4] <= Mux4.DB_MAX_OUTPUT_PORT_TYPE
+ResultLED[3] <= Mux3.DB_MAX_OUTPUT_PORT_TYPE
+ResultLED[2] <= Mux2.DB_MAX_OUTPUT_PORT_TYPE
+ResultLED[1] <= Mux1.DB_MAX_OUTPUT_PORT_TYPE
+ResultLED[0] <= Mux0.DB_MAX_OUTPUT_PORT_TYPE
+NegativeLED[6] <= neg.DB_MAX_OUTPUT_PORT_TYPE
+NegativeLED[5] <= <VCC>
+NegativeLED[4] <= <VCC>
+NegativeLED[3] <= <VCC>
+NegativeLED[2] <= <VCC>
+NegativeLED[1] <= <VCC>
+NegativeLED[0] <= <VCC>
+
+

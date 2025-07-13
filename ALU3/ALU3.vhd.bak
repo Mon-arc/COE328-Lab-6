@@ -1,0 +1,95 @@
+LIBRARY ieee;
+USE ieee.std_logic_1164.all;
+USE ieee.std_logic_unsigned.all;
+USE ieee.numeric_std.all;
+
+entity ALU3 is port
+(
+	clock, reset	: in std_logic;
+	A, B				: in unsigned(7 downto 0);
+	opcode			: in unsigned(15 downto 0);
+	student_id		: in unsigned(3 downto 0);
+	neg				: out std_logic;
+	Result			: out unsigned(3 downto 0));
+end ALU3;
+
+architecture calculation of ALU3 is begin
+
+	process (clock, reset) begin
+		if reset = '1' then
+			Result <= "00000000";
+		elsif (clock'EVENT AND clock = '1') then
+			case opcode is
+				when "0000000000000001" => 				 -- PROBLEM 3: MODIFIED ALU CORE 2, ALU OPERATIONS ASSIGNED: i)
+					if (B(7 downto 4) < student_id) then -- function 1-8 ~ For each opcode submitted to the ALU, display 'y' if one of
+					Result <= "1111";							 -- the 2 digits of B is less than the student_id signal value and 'n' otherwise
+					elsif (B(3 downto 0) < student_id) then
+					Result <= "1111";
+					else
+					Result <= "0000";
+					end if;
+												   
+			  when "0000000000000010" =>  
+					if (B(7 downto 4) < student_id) then
+					Result <= "1111";
+					elsif (B(3 downto 0) < student_id) then
+					Result <= "1111";
+					else
+					Result <= "0000";
+					end if;
+				when "0000000000000100" => 
+					if (B(7 downto 4) < student_id) then
+					Result <= "1111";
+					elsif (B(3 downto 0) < student_id) then
+					Result <= "1111";
+					else
+					Result <= "0000";
+					end if;
+				when "0000000000001000" => 
+					if (B(7 downto 4) < student_id) then
+					Result <= "1111";
+					elsif (B(3 downto 0) < student_id) then
+					Result <= "1111";
+					else
+					Result <= "0000";
+					end if;
+				when "0000000000010000" => 
+					if (B(7 downto 4) < student_id) then
+					Result <= "1111";
+					elsif (B(3 downto 0) < student_id) then
+					Result <= "1111";
+					else
+					Result <= "0000";
+					end if;
+				when "0000000000100000" =>
+					if (B(7 downto 4) < student_id) then
+					Result <= "1111";
+					elsif (B(3 downto 0) < student_id) then
+					Result <= "1111";
+					else
+					Result <= "0000";
+					end if;
+				when "0000000001000000" => 
+					if (B(7 downto 4) < student_id) then
+					Result <= "1111";
+					elsif (B(3 downto 0) < student_id) then
+					Result <= "1111";
+					else
+					Result <= "0000";
+					end if;
+				when "0000000010000000" => 
+					if (B(7 downto 4) < student_id) then
+					Result <= "1111";
+					elsif (B(3 downto 0) < student_id) then
+					Result <= "1111";
+					else
+					Result <= "0000";
+					end if;
+				when others =>					-- don't care
+			end case;
+		end if;
+	end process;
+
+end calculation;
+					
+					

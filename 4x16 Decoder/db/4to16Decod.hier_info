@@ -1,0 +1,125 @@
+|4to16Decod
+y[0] <= decod:inst1.y0
+y[1] <= decod:inst1.y1
+y[2] <= decod:inst1.y2
+y[3] <= decod:inst1.y3
+y[4] <= decod:inst2.y0
+y[5] <= decod:inst2.y1
+y[6] <= decod:inst2.y2
+y[7] <= decod:inst2.y3
+y[8] <= decod:inst3.y0
+y[9] <= decod:inst3.y1
+y[10] <= decod:inst3.y2
+y[11] <= decod:inst3.y3
+y[12] <= decod:inst4.y0
+y[13] <= decod:inst4.y1
+y[14] <= decod:inst4.y2
+y[15] <= decod:inst4.y3
+w[0] => decod:inst1.w0
+w[0] => decod:inst2.w0
+w[0] => decod:inst3.w0
+w[0] => decod:inst4.w0
+w[1] => decod:inst1.w1
+w[1] => decod:inst2.w1
+w[1] => decod:inst3.w1
+w[1] => decod:inst4.w1
+w[2] => decod:inst.w0
+w[3] => decod:inst.w1
+En => decod:inst.En
+
+
+|4to16Decod|decod:inst1
+w1 => Mux0.IN9
+w1 => Mux1.IN9
+w1 => Mux2.IN9
+w1 => Mux3.IN9
+w0 => Mux0.IN10
+w0 => Mux1.IN10
+w0 => Mux2.IN10
+w0 => Mux3.IN10
+En => Mux0.IN8
+En => Mux1.IN8
+En => Mux2.IN8
+En => Mux3.IN8
+y0 <= Mux0.DB_MAX_OUTPUT_PORT_TYPE
+y1 <= Mux1.DB_MAX_OUTPUT_PORT_TYPE
+y2 <= Mux2.DB_MAX_OUTPUT_PORT_TYPE
+y3 <= Mux3.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|4to16Decod|decod:inst
+w1 => Mux0.IN9
+w1 => Mux1.IN9
+w1 => Mux2.IN9
+w1 => Mux3.IN9
+w0 => Mux0.IN10
+w0 => Mux1.IN10
+w0 => Mux2.IN10
+w0 => Mux3.IN10
+En => Mux0.IN8
+En => Mux1.IN8
+En => Mux2.IN8
+En => Mux3.IN8
+y0 <= Mux0.DB_MAX_OUTPUT_PORT_TYPE
+y1 <= Mux1.DB_MAX_OUTPUT_PORT_TYPE
+y2 <= Mux2.DB_MAX_OUTPUT_PORT_TYPE
+y3 <= Mux3.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|4to16Decod|decod:inst2
+w1 => Mux0.IN9
+w1 => Mux1.IN9
+w1 => Mux2.IN9
+w1 => Mux3.IN9
+w0 => Mux0.IN10
+w0 => Mux1.IN10
+w0 => Mux2.IN10
+w0 => Mux3.IN10
+En => Mux0.IN8
+En => Mux1.IN8
+En => Mux2.IN8
+En => Mux3.IN8
+y0 <= Mux0.DB_MAX_OUTPUT_PORT_TYPE
+y1 <= Mux1.DB_MAX_OUTPUT_PORT_TYPE
+y2 <= Mux2.DB_MAX_OUTPUT_PORT_TYPE
+y3 <= Mux3.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|4to16Decod|decod:inst3
+w1 => Mux0.IN9
+w1 => Mux1.IN9
+w1 => Mux2.IN9
+w1 => Mux3.IN9
+w0 => Mux0.IN10
+w0 => Mux1.IN10
+w0 => Mux2.IN10
+w0 => Mux3.IN10
+En => Mux0.IN8
+En => Mux1.IN8
+En => Mux2.IN8
+En => Mux3.IN8
+y0 <= Mux0.DB_MAX_OUTPUT_PORT_TYPE
+y1 <= Mux1.DB_MAX_OUTPUT_PORT_TYPE
+y2 <= Mux2.DB_MAX_OUTPUT_PORT_TYPE
+y3 <= Mux3.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|4to16Decod|decod:inst4
+w1 => Mux0.IN9
+w1 => Mux1.IN9
+w1 => Mux2.IN9
+w1 => Mux3.IN9
+w0 => Mux0.IN10
+w0 => Mux1.IN10
+w0 => Mux2.IN10
+w0 => Mux3.IN10
+En => Mux0.IN8
+En => Mux1.IN8
+En => Mux2.IN8
+En => Mux3.IN8
+y0 <= Mux0.DB_MAX_OUTPUT_PORT_TYPE
+y1 <= Mux1.DB_MAX_OUTPUT_PORT_TYPE
+y2 <= Mux2.DB_MAX_OUTPUT_PORT_TYPE
+y3 <= Mux3.DB_MAX_OUTPUT_PORT_TYPE
+
+
