@@ -102,14 +102,14 @@ Implements a decision-based operation set:
 ---
 
 ## File Structure
-/ALU1/ # VHDL for ALU 1 + combined CPU
-/ALU2/ # VHDL for ALU 2 + combined CPU
-/ALU3/ # VHDL for ALU 3 + combined CPU
-/Register/ # 8-bit latch/register modules
-/FSM/ # Finite state machine
-/Decoder/ # 4:16 decoder implementation
-/SSEG/ # Seven-segment display drivers (2 versions)
-/Report.pdf # Full lab report with diagrams and verification
+- /ALU1/ # VHDL for ALU 1 + combined CPU
+- /ALU2/ # VHDL for ALU 2 + combined CPU
+- /ALU3/ # VHDL for ALU 3 + combined CPU
+- /Register/ # 8-bit latch/register modules
+- /FSM/ # Finite state machine
+- /Decoder/ # 4:16 decoder implementation
+- /SSEG/ # Seven-segment display drivers (2 versions)
+- /Report.pdf # Full lab report with diagrams and verification
 
 ---
 
